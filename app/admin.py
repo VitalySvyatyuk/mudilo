@@ -13,4 +13,4 @@ class GrievanceAdmin(admin.ModelAdmin):
 
 @admin.register(Plate)
 class PlateAdmin(admin.ModelAdmin):
-    list_display = ('name', 'created')
+    list_display = ('name', 'country', 'created')

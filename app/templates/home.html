@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap4 static i18n %}
+
+
+{% block body %}
+  <div class="container">
+      <div class="row">
+          <form action="" method="post" class="my-4 col-md-6 offset-md-3">
+              {% bootstrap_form form %}
+              {% csrf_token %}
+              <button class="btn btn-success" type="submit">{% translate 'Send' %}</button>
+          </form>
+      </div>
+  </div>
+
+{% endblock %}

@@ -30,5 +30,5 @@ class GrievanceView(FormView):
         messages.add_message(
             self.request,
             messages.SUCCESS,
-            _('Your grievance created.'))
+            _('Your grievance created'))
         return redirect(self.success_url)
