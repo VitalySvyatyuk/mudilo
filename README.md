@@ -7,7 +7,6 @@ The app collects info about 'bad drivers'. Responsible and proactive drivers reg
 - use bootstrap cards
 - add tooltip with info
 - research yandex keys
-- redirect to the success page
 - add page404
 - add by IP
 - add gen_data
@@ -18,5 +17,3 @@ The app collects info about 'bad drivers'. Responsible and proactive drivers reg
 - add recaptcha
 - add robots.txt
 - research tool for view users' IPs
-- write info
-

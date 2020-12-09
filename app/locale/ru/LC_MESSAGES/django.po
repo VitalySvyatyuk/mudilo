@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-09 21:46+0300\n"
+"POT-Creation-Date: 2020-12-09 23:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,10 +21,8 @@ msgstr ""
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: forms.py:12
-#, fuzzy
-#| msgid "Example: a324bk23rus"
 msgid "Example: A324BK 23rus"
-msgstr "Пример: a324bk23rus"
+msgstr "Пример: A324BK 23rus"
 
 #: forms.py:13 models.py:14
 msgid "License plate of the vehicle"
@@ -39,10 +37,8 @@ msgid "The reason of the grievance"
 msgstr "Причина"
 
 #: forms.py:33
-#, fuzzy
-#| msgid "Try to put another plate. Example: a324bk23rus"
 msgid "Try to put another plate. Example: A324BK23rus"
-msgstr "Попробуйте ещё раз. Пример: a324bk23rus"
+msgstr "Попробуйте ещё раз. Пример: A324BK23rus"
 
 #: models.py:13 templates/search.html:9
 msgid "License Plate"
@@ -68,15 +64,19 @@ msgstr "Описание"
 msgid "Grievance creation date"
 msgstr "Дата создания жалобы"
 
+#: templates/about.html:7 templates/base.html:27
+msgid "Grievance"
+msgstr "Пожаловаться"
+
+#: templates/about.html:10 templates/base.html:30
+msgid "About"
+msgstr "О сервисе"
+
 #: templates/base.html:11
 msgid "Complain about the driver"
 msgstr "Пожаловаться на водителя"
 
-#: templates/base.html:26
-msgid "Grievance"
-msgstr "Пожаловаться"
-
-#: templates/base.html:32
+#: templates/base.html:37
 msgid "Search Plate"
 msgstr "Найти номер"
 
@@ -103,7 +103,3 @@ msgstr "Автомобильный номер не найден"
 #: templates/success.html:8
 msgid "Grievance successfully created!"
 msgstr "Жалоба успешно подана!"
-
-#: views.py:35
-msgid "Your grievance had been sent"
-msgstr "Ваша жалоба отправлена"
