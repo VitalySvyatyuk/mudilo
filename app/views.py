@@ -11,13 +11,14 @@ from django.views.generic.edit import (CreateView, DeleteView, FormView,
 from .forms import GrievanceForm
 from .models import Grievance, Plate
 from django.utils.translation import gettext as _
+from .utils import validate_plate, map_words, clean_p
 
 
 class GrievanceView(FormView):
     template_name = 'home.html'
     form_class = GrievanceForm
     model = Grievance
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('success')
 
     def setup(self, request, *args, **kwargs):
         # ToDo: add restriction to 5 times per day
@@ -28,10 +29,6 @@ class GrievanceView(FormView):
             plate=form.cleaned_data['plate'],
             level=form.cleaned_data.get('level', 3),
             description=form.cleaned_data['description'])
-        messages.add_message(
-            self.request,
-            messages.SUCCESS,
-            _('Your grievance had been sent'))
         return redirect(self.success_url)
 
 
@@ -40,9 +37,12 @@ class SearchView(View):
 
     def get_context_data(self):
         search = self.request.POST.get('search')
-        if not search:
+        if not search or len(search) > 30:
             return {}
-        plate = Plate.objects.filter(name=search).last()
+        plate = clean_p(search.lower())
+        plate = map_words(plate)
+        plate, country = validate_plate(plate)
+        plate = Plate.objects.filter(name=plate, country=country).last()
         if not plate:
             return {}
         context = {'plate': plate}
@@ -51,9 +51,3 @@ class SearchView(View):
     def post(self, request, *args, **kwargs):
         context = self.get_context_data()
         return render(request, self.template_name, context)
-
-    # def form_invalid(self, form):
-    #     pass
-    #
-    # def form_valid(self, form):
-    #     return redirect('home')

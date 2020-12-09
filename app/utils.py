@@ -3,6 +3,12 @@ import re
 from .plate_regex import regex, word_map
 
 
+def clean_p(plate):
+    plate = plate.replace(' ', '').replace('-', '').replace('.', '')
+    plate = plate.replace("'", '').replace('"', '')
+    return plate
+
+
 def rreplace(s, old, new, occurrence):
     li = s.rsplit(old, occurrence)
     return new.join(li)
