@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-08 22:10+0300\n"
+"POT-Creation-Date: 2020-12-09 21:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,31 +20,31 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: forms.py:14
+#: forms.py:12
 msgid "Example: a324bk23rus"
 msgstr "Пример: a324bk23rus"
 
-#: forms.py:15 models.py:14
+#: forms.py:13 models.py:14
 msgid "License plate of the vehicle"
 msgstr "Автомобильный номер"
 
-#: forms.py:22 models.py:27
+#: forms.py:20 models.py:27
 msgid "The level of discontent from 1 to 5"
 msgstr "Уровень возмущения от 1 до 5"
 
-#: forms.py:26 forms.py:28 models.py:33
+#: forms.py:25 models.py:33
 msgid "The reason of the grievance"
-msgstr "Причина жалобы"
+msgstr "Причина"
 
-#: forms.py:38
+#: forms.py:34
 msgid "Try to put another plate. Example: a324bk23rus"
 msgstr "Попробуйте ещё раз. Пример: a324bk23rus"
 
-#: models.py:13
+#: models.py:13 templates/search.html:9
 msgid "License Plate"
 msgstr "Автомобильный номер"
 
-#: models.py:15 models.py:16
+#: models.py:15 models.py:16 templates/search.html:10
 msgid "Country"
 msgstr "Страна"
 
@@ -56,7 +56,7 @@ msgstr "Дата создания номера"
 msgid "Anger Level"
 msgstr "Уровень недовольства"
 
-#: models.py:32
+#: models.py:32 templates/search.html:16
 msgid "Description"
 msgstr "Описание"
 
@@ -64,26 +64,38 @@ msgstr "Описание"
 msgid "Grievance creation date"
 msgstr "Дата создания жалобы"
 
-#: templates/base.html:10
+#: templates/base.html:11
 msgid "Complain about the driver"
 msgstr "Пожаловаться на водителя"
 
-#: templates/base.html:25
+#: templates/base.html:26
 msgid "Grievance"
 msgstr "Пожаловаться"
 
-#: templates/base.html:29
-msgid "Search"
-msgstr "Поиск"
-
-#: templates/base.html:30
+#: templates/base.html:32
 msgid "Search Plate"
 msgstr "Найти номер"
 
-#: templates/home.html:11
+#: templates/home.html:10
 msgid "Send"
 msgstr "Отправить"
 
-#: views.py:33
-msgid "Your grievance created"
-msgstr "Ваша жалоба создана"
+#: templates/search.html:11
+msgid "Records"
+msgstr "Жалобы"
+
+#: templates/search.html:14
+msgid "Date"
+msgstr "Дата"
+
+#: templates/search.html:14
+msgid "Level"
+msgstr "Уровень"
+
+#: templates/search.html:20
+msgid "License Plate not found"
+msgstr "Автомобильный номер не найден"
+
+#: views.py:34
+msgid "Your grievance had been sent"
+msgstr "Ваша жалоба отправлена"

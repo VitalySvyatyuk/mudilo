@@ -10,9 +10,9 @@ class Plate(models.Model):
     COUNTRIES = [
         ('Ru', 'ru'), ('Am', 'am'), ('By', 'by'), ('Ua', 'ua')
     ]
-    name = models.CharField(_('License Plate'), max_length=30,
+    name = models.CharField(_('License Plate'), max_length=30, unique=True,
         help_text=_('License plate of the vehicle'))
-    country = models.CharField(_('Country'), max_length=20, choices=COUNTRIES, default='ru',
+    country = models.CharField(_('Country'), max_length=20, choices=COUNTRIES, default='Ru',
         help_text=_('Country'))
     created = models.DateTimeField(auto_now_add=True,
         help_text=_('Plate creation date'))

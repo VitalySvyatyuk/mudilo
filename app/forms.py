@@ -1,5 +1,3 @@
-import re
-
 from django import forms
 from django.utils.translation import gettext as _
 
@@ -23,10 +21,8 @@ class GrievanceForm(forms.ModelForm):
     description = forms.CharField(
         label='',
         max_length=300,
-        widget=forms.Textarea(attrs={'placeholder': _('The reason of the grievance')}),
-        required=False,
-        help_text=_('The reason of the grievance')
-    )
+        required=True,
+        widget=forms.Textarea(attrs={'placeholder': _('The reason of the grievance')}))
 
     def clean_plate(self):
         plate = self.cleaned_data['plate'].lower()

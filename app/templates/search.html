@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load bootstrap4 static i18n %}
+
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            {% if plate %}
+                <p class="my-3">{% translate 'License Plate' %}: {{ plate.name|upper }}</p>
+                <p>{% translate 'Country' %}: {{ plate.country }}</p>
+                <p>{% translate 'Records' %}:</p>
+                {% for grievance in plate.grievance_set.all %}
+                    <p>
+                        {% translate 'Date' %}: {{ grievance.created }} {% translate 'Level' %}: {{ grievance.level }}
+                        <br>
+                        {% translate 'Description' %}: {{ grievance.description }}
+                    </p>
+                {% endfor %}
+            {% else %}
+                <h4 class="text-center my-5">{% translate 'License Plate not found' %}</h4>
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}
