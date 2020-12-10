@@ -1,0 +1,19 @@
+#search-results {
+    background-color: white;
+    border: 1px solid rgb(206, 212, 218);
+    border-radius: 3px;
+    top: 2.4em;
+    z-index: 2;
+}
+.search-span {
+    cursor: pointer;
+    color: rgb(73, 80, 87)
+}
+.search-span:hover, .img-country:hover {
+    opacity: 50%
+}
+.img-country {
+    height: 12px;
+    margin-right: 10px;
+    vertical-align: baseline;
+}

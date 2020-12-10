@@ -8,7 +8,7 @@ from django.utils.translation import gettext as _
 
 class Plate(models.Model):
     COUNTRIES = [
-        ('Ru', 'ru'), ('Am', 'am'), ('By', 'by'), ('Ua', 'ua')
+        ('ru', 'ru'), ('am', 'am'), ('by', 'by'), ('ua', 'ua')
     ]
     name = models.CharField(_('License Plate'), max_length=30, unique=True,
         help_text=_('License plate of the vehicle'))

@@ -17,3 +17,5 @@ The app collects info about 'bad drivers'. Responsible and proactive drivers reg
 - add recaptcha
 - add robots.txt
 - research tool for view users' IPs
+- add advertisments
+- add footer

@@ -22,7 +22,7 @@ def map_words(plate):
 
 
 def pre_return(plate, country):
-    if country == 'Ru':
+    if country == 'ru':
         # remove the last tail 'rus,ru...'
         last = re.split('[0-9]{2,3}', plate)[-1]
         if last:

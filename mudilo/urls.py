@@ -1,8 +1,10 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
+from django.urls import path
 from django.contrib import admin
 from django.views.generic.base import TemplateView
 
 from app import views as v
+from app import api as api_v
 
 urlpatterns = [
     url(r'^$', v.GrievanceView.as_view(), name='home'),
@@ -10,4 +12,8 @@ urlpatterns = [
     url(r'^search$', v.SearchView.as_view(), name='search'),
     url(r'^success$', TemplateView.as_view(template_name='success.html'), name='success'),
     url(r'^about$', TemplateView.as_view(template_name='about.html'), name='about'),
+
+    url(r'^api/v1/search$', api_v.SearchPlates.as_view(), name='api_search'),
+
+    # path('api-auth/', include('rest_framework.urls'))
 ]

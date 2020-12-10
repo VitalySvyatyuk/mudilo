@@ -2,6 +2,18 @@
 {% load bootstrap4 static i18n %}
 
 
+{% block navitems %}
+<ul class="navbar-nav mr-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="/">{% translate 'Grievance' %} <span class="sr-only">(current)</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/about">{% translate 'About' %} <span class="sr-only">(current)</span></a>
+  </li>
+</ul>
+{% endblock %}
+
+
 {% block body %}
     <div class="row">
         <div class="col-md-6 offset-md-3">
