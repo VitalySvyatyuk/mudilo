@@ -4,7 +4,8 @@
 
 {% block body %}
     <div class="row">
-        <form action="" method="post" class="my-4 col-md-6 offset-md-3">
+        <h1 class="h1-text my-4 col-md-6 offset-md-3">Пожаловаться на водителя</h1>
+        <form action="" method="post" class="mb-4 col-md-6 offset-md-3">
             {% bootstrap_form form %}
             {% csrf_token %}
             <button class="btn btn-success" type="submit">{% translate 'Send' %}</button>
