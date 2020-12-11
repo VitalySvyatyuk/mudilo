@@ -4,6 +4,7 @@ bad driver
 The app collects info about 'bad drivers'. Responsible and proactive drivers register such drivers and send their license numbers to our system. The system, based on the data, makes a decision - is driver mudilo or not. 
 
 ## ToDo:
+- 
 - use bootstrap cards
 - add tooltip with info
 - research yandex keys
@@ -19,3 +20,4 @@ The app collects info about 'bad drivers'. Responsible and proactive drivers reg
 - research tool for view users' IPs
 - add advertisments
 - add footer
+- add 'angry points' up to 20 per day
