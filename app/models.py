@@ -33,6 +33,7 @@ class Grievance(models.Model):
         help_text=_('The reason of the grievance'),)
     created = models.DateTimeField(auto_now_add=True,
         help_text=_('Grievance creation date'))
+    ip = models.GenericIPAddressField(_('IP address'), blank=True, null=True)
 
     def __str__(self):
         return f'{self.plate.name} at {self.created} by {self.level} level'

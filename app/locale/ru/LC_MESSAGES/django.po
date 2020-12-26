@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-11 13:45+0300\n"
+"POT-Creation-Date: 2020-12-26 13:17+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,13 +64,17 @@ msgstr "Описание"
 msgid "Grievance creation date"
 msgstr "Дата создания жалобы"
 
-#: templates/about.html:7 templates/base.html:44 templates/search.html:8
-#: templates/success.html:8
+#: models.py:36
+msgid "IP address"
+msgstr ""
+
+#: templates/about.html:7 templates/base.html:44 templates/error.html:8
+#: templates/search.html:8 templates/success.html:8
 msgid "Grievance"
 msgstr "Пожаловаться"
 
-#: templates/about.html:10 templates/base.html:47 templates/search.html:11
-#: templates/success.html:11
+#: templates/about.html:10 templates/base.html:47 templates/error.html:11
+#: templates/search.html:11 templates/success.html:11
 msgid "About"
 msgstr "О сервисе"
 
@@ -81,6 +85,10 @@ msgstr "Пожаловаться на водителя"
 #: templates/base.html:55
 msgid "Search Plate"
 msgstr "Найти номер"
+
+#: templates/error.html:20
+msgid "Daily limit of grievances is reached!"
+msgstr "Дневной лимит жалоб иссяк! Возвращайтесь завтра!"
 
 #: templates/home.html:11
 msgid "Send"
@@ -103,5 +111,9 @@ msgid "License Plate not found"
 msgstr "Автомобильный номер не найден"
 
 #: templates/success.html:20
+msgid "Thanks!"
+msgstr "Спасибо!"
+
+#: templates/success.html:21
 msgid "Grievance successfully created!"
 msgstr "Жалоба успешно подана!"

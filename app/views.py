@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from datetime import timedelta
 from django.http import Http404
 from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
+from django.utils import timezone
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import (CreateView, DeleteView, FormView,
                                        UpdateView, View)
@@ -19,16 +21,24 @@ class GrievanceView(FormView):
     form_class = GrievanceForm
     model = Grievance
     success_url = reverse_lazy('success')
+    error_url = reverse_lazy('error')
 
     def setup(self, request, *args, **kwargs):
-        # ToDo: add restriction to 5 times per day
         super().setup(request, *args, **kwargs)
 
     def form_valid(self, form):
+        now = timezone.now()
+        last_24 = now - timedelta(hours=24)
+        ip = self.request.META['REMOTE_ADDR']
+        grievances = Grievance.objects.filter(ip=ip,
+                                              created__gte=last_24, created__lt=now)
+        if grievances.count() >= 5:
+            return redirect(self.error_url)
         Grievance.objects.create(
             plate=form.cleaned_data['plate'],
             level=form.cleaned_data.get('level', 3),
-            description=form.cleaned_data['description'])
+            description=form.cleaned_data['description'],
+            ip=ip)
         return redirect(self.success_url)
 
 
