@@ -29,7 +29,9 @@ class GrievanceView(FormView):
     def form_valid(self, form):
         now = timezone.now()
         last_24 = now - timedelta(hours=24)
-        ip = self.request.META['REMOTE_ADDR']
+        ip = self.request.META.get(
+            'HTTP_X_FORWARDED_FOR', self.request.META.get(
+                'REMOTE_ADDR', '')).split(',')[0].strip()
         grievances = Grievance.objects.filter(ip=ip,
                                               created__gte=last_24, created__lt=now)
         if grievances.count() >= 5:
