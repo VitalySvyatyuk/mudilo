@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load bootstrap4 static i18n %}
 
+{% block title %}О Сервисе пожаловаться на автохама{% endblock %}
+{% block description %}О сервисе "Пожаловаться на автохама". Документация и FAQ.{% endblock %}
+
 {% block navitems %}
 <ul class="navbar-nav mr-auto">
   <li class="nav-item">
@@ -15,7 +18,7 @@
 {% block body %}
 <div class="row">
 <div class="col-md-6 offset-md-3">
-    <img src="{% static 'images/full-web-nobg.png' %}" style="width: 100%; text-align: center;">
+    <img src="{% static 'images/full-web-nobg.png' %}" alt="Раздраженный водитель" style="width: 100%; text-align: center;">
     <p>
         Немалую часть времени мы проводим в дороге, стоя в пробке. Все мы спешим, кто на работу, кто домой,
         кто куда. Само собой, мы бы хотели двигаться быстрее, но есть ряд непреодолимых обстоятельств, как то

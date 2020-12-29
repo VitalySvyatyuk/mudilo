@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load bootstrap4 static i18n %}
 
-{% block title %}Ошибка создания заявки{% endblock %}
+{% block title %}Страница не найдена{% endblock %}
 
 {% block navitems %}
 <ul class="navbar-nav mr-auto">
@@ -17,8 +17,9 @@
 
 {% block body %}
     <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <h4 class="text-center my-5">{% translate 'Daily limit of grievances is reached!' %}</h4>
+        <div class="col-md-6 offset-md-3 text-center">
+            <img src="{% static 'images/full-ready-nobg30.png' %}" alt="Раздраженный водитель">
+            <h4 class="text-center my-5">Страница не найдена!</h4>
         </div>
     </div>
 

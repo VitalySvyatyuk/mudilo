@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 {% load bootstrap4 static i18n %}
 
+{% block title %}Пожаловаться на водителя{% endblock %}
+{% block description %}Пожаловаться на водителя в два клика. Анонимно. Ни один автохам не останется незамеченным!{% endblock %}
 
 {% block body %}
     <div class="row">
         <h1 class="h1-text my-4 col-md-6 offset-md-3">Пожаловаться на водителя</h1>
+        <p class="col-md-6 offset-md-3">Пожаловаться на водителя в два клика. Ни один автохам не останется незамеченным!</p>
         <form action="" method="post" class="mb-4 col-md-6 offset-md-3">
             {% bootstrap_form form %}
             {% csrf_token %}

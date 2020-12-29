@@ -4,3 +4,4 @@ Disallow: /api/v1/
 Disallow: /success/
 Disallow: /error/
 Allow: /
+Sitemap: https://mudilo.me/sitemap.xml

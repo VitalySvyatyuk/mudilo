@@ -38,9 +38,6 @@ def ip_addresses():
 
 ALLOWED_HOSTS = ip_addresses()
 
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -50,6 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
+    'django.contrib.sites',
     'app',
     'bootstrap4',
     'rest_framework',
@@ -150,6 +149,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+
+SITE_ID = 1
 
 try:
     from mudilo.settings_prod import *  # NOQA
