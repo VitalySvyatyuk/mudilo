@@ -6,13 +6,11 @@ The app collects info about 'bad drivers'. Responsible and proactive drivers reg
 ## ToDo:
 - use bootstrap cards
 - add tooltip with info
-- add page404
 - add gen_data
 - get user's location
 - add ElasticSearch
 - switch to Uvicorn
 - add recaptcha
-- research tool for view users' IPs
 - add advertisments
 - add footer
 - add 'angry points' up to 20 per day
