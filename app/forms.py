@@ -20,7 +20,7 @@ class GrievanceForm(forms.ModelForm):
         help_text=_('The level of discontent from 1 to 5'))
     description = forms.CharField(
         label='',
-        max_length=500,
+        max_length=2000,
         required=True,
         widget=forms.Textarea(attrs={'placeholder': _('The reason of the grievance')}))
 

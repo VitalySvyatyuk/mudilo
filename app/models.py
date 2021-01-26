@@ -29,7 +29,7 @@ class Grievance(models.Model):
              MaxValueValidator(5),
              MinValueValidator(1)
          ])
-    description = models.TextField(_('Description'), max_length=500, blank=True, null=True,
+    description = models.TextField(_('Description'), max_length=2000, blank=True, null=True,
         help_text=_('The reason of the grievance'),)
     created = models.DateTimeField(auto_now_add=True,
         help_text=_('Grievance creation date'))
