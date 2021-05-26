@@ -8,7 +8,8 @@ from django.contrib import admin
 
 @admin.register(Grievance)
 class GrievanceAdmin(admin.ModelAdmin):
-    list_display = ('plate', 'level', 'description', 'created', 'ip')
+    list_display = ('plate', 'level', 'description', 'image', 'email',
+                    'gibdd_id', 'gibdd_code', 'gibdd_link', 'created', 'ip')
 
 
 @admin.register(Plate)

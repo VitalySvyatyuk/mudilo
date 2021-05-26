@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load bootstrap4 static i18n %}
+{% load bootstrap4 static %}
 
 {% block title %}О Сервисе пожаловаться на автохама{% endblock %}
 {% block description %}О сервисе "Пожаловаться на автохама". Документация и FAQ.{% endblock %}
@@ -13,10 +13,10 @@
 {% block navitems %}
 <ul class="navbar-nav mr-auto">
   <li class="nav-item">
-    <a class="nav-link" href="/">{% translate 'Grievance' %} <span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="/">Пожаловаться <span class="sr-only">(current)</span></a>
   </li>
   <li class="nav-item active">
-    <a class="nav-link" href="/about">{% translate 'About' %} <span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="/about">О сервисе <span class="sr-only">(current)</span></a>
   </li>
 </ul>
 {% endblock %}
@@ -62,12 +62,17 @@
     </p>
     <p>
         <b>Нужно ли заполнять информацию о себе? Телефон или email?</b><br>
-        Нет. Сервис является полностью анонимным.
+        Нет. Сервис является полностью анонимным. Поле email не является обязательным, оно нужно для того, чтобы
+        приславать Вам результат.
     </p>
     <p>
         <b>Получит ли заявка дальнейший ход? Привлекут ли нарушителя административно?</b><br>
-        Нет. Сервис создан для "эмоциональной" реакции. Чтобы выплеснуть негатив. Ну и
-        запись о нарушителе будет доступна онлайн.
+        Да. Сервис направляет жалобы в ГИБДД.
+    </p>
+    <p>
+        <b>Как узнать результат жалобы?</b><br>
+        Если Вы указали email, то результат придет на ваш email. Если Вы не указывали email, то проверить результат
+        можно на главной странице, указав автономер нарушителя в строке поиска и нажав "Найти номер".
     </p>
     <p>
         <b>Автомобильные номера каких стран поддерживаются?</b><br>

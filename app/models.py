@@ -3,19 +3,18 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from django.utils.translation import gettext as _
 
 
 class Plate(models.Model):
     COUNTRIES = [
         ('ru', 'ru'), ('am', 'am'), ('by', 'by'), ('ua', 'ua')
     ]
-    name = models.CharField(_('License Plate'), max_length=30, unique=True,
-        help_text=_('License plate of the vehicle'))
-    country = models.CharField(_('Country'), max_length=20, choices=COUNTRIES, default='Ru',
-        help_text=_('Country'))
+    name = models.CharField(max_length=30, unique=True,
+        help_text='Автомобильный номер')
+    country = models.CharField(max_length=20, choices=COUNTRIES, default='Ru',
+        help_text='Страна')
     created = models.DateTimeField(auto_now_add=True,
-        help_text=_('Plate creation date'))
+        help_text='Дата создания автомобильного номера')
 
     def __str__(self):
         return self.name
@@ -23,17 +22,29 @@ class Plate(models.Model):
 
 class Grievance(models.Model):
     plate = models.ForeignKey(Plate, on_delete=models.CASCADE)
-    level = models.PositiveSmallIntegerField(_('Anger Level'),
-         help_text=_('The level of discontent from 1 to 5'), default=3,
+    level = models.PositiveSmallIntegerField(
+         help_text='Уровень возмущения от 1 до 5, где 5 - крайне возмущен!', default=3,
          validators=[
-             MaxValueValidator(5),
-             MinValueValidator(1)
+             MinValueValidator(1),
+             MaxValueValidator(5)
          ])
-    description = models.TextField(_('Description'), max_length=2000, blank=True, null=True,
-        help_text=_('The reason of the grievance'),)
+    description = models.TextField(max_length=2000, blank=True, null=True,
+        help_text='Описание')
+    image = models.ImageField(blank=True, null=True,
+        help_text='Фото')
+    email = models.CharField(max_length=60, unique=False, blank=True, null=True,
+        help_text='Email для результата')
     created = models.DateTimeField(auto_now_add=True,
-        help_text=_('Grievance creation date'))
-    ip = models.GenericIPAddressField(_('IP address'), blank=True, null=True)
+        help_text='Дата создания жалобы')
+    ip = models.GenericIPAddressField(blank=True, null=True)
+    gibdd_id = models.CharField(max_length=30, blank=True, null=True,
+        help_text='id обращения на сайте ГИБДД')
+    gibdd_code = models.CharField(max_length=120, blank=True, null=True,
+        help_text='Код проверки статуса обращения на сайте ГИБДД')
+    gibdd_link = models.CharField(max_length=200, blank=True, null=True,
+        help_text='Ссылка на обращение на сайт ГИБДД')
+    result = models.CharField(max_length=2000, blank=True, null=True,
+        help_text='Результат жалобы')
 
     def __str__(self):
         return f'{self.plate.name} at {self.created} by {self.level} level'

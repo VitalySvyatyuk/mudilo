@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
-{% load bootstrap4 static i18n %}
+{% load bootstrap4 static %}
 
-{% block title %}Спасибо создание заявки{% endblock %}
+{% block title %}Заявка создана{% endblock %}
 
 {% block navitems %}
 <ul class="navbar-nav mr-auto">
   <li class="nav-item">
-    <a class="nav-link" href="/">{% translate 'Grievance' %} <span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="/">Пожаловаться <span class="sr-only">(current)</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/about">{% translate 'About' %} <span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="/about">О сервисе <span class="sr-only">(current)</span></a>
   </li>
 </ul>
 {% endblock %}
@@ -18,8 +18,8 @@
 {% block body %}
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h4 class="text-center my-5">{% translate 'Grievance successfully created!' %}</h4>
-            <h4 class="text-center my-5">{% translate 'Thanks!' %}</h4>
+            <h4 class="text-center my-5">Жалоба успешно подана!</h4>
+            <h4 class="text-center my-5">Спасибо!</h4>
         </div>
     </div>
 
