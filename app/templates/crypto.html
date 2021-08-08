@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load bootstrap4 static %}
+
+{% block title %}Currencies{% endblock %}
+{% block extrahead %}
+    <!-- Event snippet for Website traffic conversion page -->
+    <script>
+      gtag('event', 'conversion', {'send_to': 'AW-962435887/M8EWCN2lx_QBEK-29soD'});
+    </script>
+{% endblock %}
+
+{% block body %}
+
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Current Price</th>
+          <th scope="col">Highest Price</th>
+          <th scope="col">Highest Price Date</th>
+          <th scope="col">Limit Price</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for currency in currencies %}
+        <tr>
+          <td>{{ currency.name }}</td>
+          <td>{{ currency.current_price }}</td>
+          <td>{{ currency.highest_price }}</td>
+          <td>{{ currency.highest_date }}</td>
+          <td
+            {% if currency.highest_price > currency.limit_price %}
+              class="text-danger"
+                  {% endif %}
+          >
+            {{ currency.limit_price }}
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

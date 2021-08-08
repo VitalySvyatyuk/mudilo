@@ -1,7 +1,7 @@
 from django import forms
 
 from .models import Grievance, Plate
-from .utils import validate_plate, map_words, clean_p
+from .utils import clean_p, map_words, validate_plate
 
 
 class GrievanceForm(forms.ModelForm):

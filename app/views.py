@@ -2,18 +2,21 @@
 from __future__ import unicode_literals
 
 from datetime import timedelta
-from django.http import Http404
+
 from django.contrib import messages
+from django.http import Http404
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.utils import timezone
+from django.utils.translation import gettext as _
+from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import (CreateView, DeleteView, FormView,
                                        UpdateView, View)
+
 from .forms import GrievanceForm
-from .models import Grievance, Plate
-from django.utils.translation import gettext as _
-from .utils import validate_plate, map_words, clean_p
+from .models import Crypto, Grievance, Plate
+from .utils import clean_p, map_words, validate_plate
 
 
 class GrievanceView(FormView):
@@ -63,3 +66,11 @@ class SearchView(View):
     def post(self, request, *args, **kwargs):
         context = self.get_context_data()
         return render(request, self.template_name, context)
+
+
+class CryptoView(TemplateView):
+    template_name = 'crypto.html'
+
+    def get_context_data(self):
+        context = {'currencies': Crypto.objects.all()}
+        return context

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.db import models
 
 
 class Plate(models.Model):
@@ -48,3 +48,17 @@ class Grievance(models.Model):
 
     def __str__(self):
         return f'{self.plate.name} at {self.created} by {self.level} level'
+
+
+class Crypto(models.Model):
+    name = models.CharField(max_length=128)
+    fullname = models.CharField(max_length=128, blank=True, null=True)
+    symbol = models.CharField(max_length=128, blank=True, null=True)
+    current_price = models.DecimalField(max_digits=30, decimal_places=15, default=0)
+    highest_price = models.DecimalField(max_digits=30, decimal_places=15, default=0)
+    highest_date = models.DateTimeField(blank=True, null=True)
+    limit_price = models.DecimalField(max_digits=30, decimal_places=15, default=0)
+    url = models.CharField(max_length=512)
+
+    def __str__(self):
+        return self.name

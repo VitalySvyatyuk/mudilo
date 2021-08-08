@@ -1,14 +1,15 @@
 from django.conf import settings
-from django.conf.urls import url, include
+from django.conf.urls import include, url
 from django.conf.urls.static import static
-from django.urls import path
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
+from django.urls import path
 from django.views.generic.base import TemplateView
 
-from .sitemaps import StaticViewSitemap
-from app import views as v
 from app import api as api_v
+from app import views as v
+
+from .sitemaps import StaticViewSitemap
 
 sitemaps = {
     'static': StaticViewSitemap,
@@ -21,6 +22,7 @@ urlpatterns = [
     url(r'^success$', TemplateView.as_view(template_name='success.html'), name='success'),
     url(r'^error$', TemplateView.as_view(template_name='error.html'), name='error'),
     url(r'^about$', TemplateView.as_view(template_name='about.html'), name='about'),
+    url(r'^crypto$', v.CryptoView.as_view(), name='crypto'),
 
     url(r'^api/v1/search$', api_v.SearchPlates.as_view(), name='api_search'),
 

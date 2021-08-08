@@ -4,6 +4,8 @@ bad driver
 The app collects info about 'bad drivers'. Responsible and proactive drivers register such drivers and send their license numbers to our system. The system, based on the data, makes a decision - is driver mudilo or not. 
 
 ## ToDo:
+- activate image and email fields
+- set image velidation less than 5 Mb  
 - use bootstrap cards
 - add tooltip with info
 - add gen_data

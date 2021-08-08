@@ -1,7 +1,8 @@
 from rest_framework import views
 from rest_framework.response import Response
+
 from .models import Plate
-from .utils import map_words, clean_p
+from .utils import clean_p, map_words
 
 
 class SearchPlates(views.APIView):
